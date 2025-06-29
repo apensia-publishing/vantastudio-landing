@@ -5,4 +5,5 @@ module.exports = {
       white: "#f2f2f2",
     },
   },
+  plugins: [require("@tailwindcss/container-queries")],
 };

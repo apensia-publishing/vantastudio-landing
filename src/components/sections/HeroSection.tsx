@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
 import HamburgerButton from "../ui/HamburgerButton";
 
@@ -27,33 +28,34 @@ export default function HeroSection() {
           <button className="text-lg underline">Show More</button>
         </div>
       </section>
+
+      {/* About section */}
       <section
         id="about"
-        className="w-full min-h-[80svh] flex flex-col items-center justify-center p-4 sm:p-6"
+        className="w-full flex flex-col items-center justify-center p-4 my-20 gap-5 sm:p-6"
       >
         <div className="w-full">
-          <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text md:text-left md:text-6xl">
+          <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
             about studio
           </h1>
         </div>
-        <div className="w-full grid gap-5 md:flex-row md:grid-cols-2">
+        <div className="grid w-full gap-5 grid-rows-2 lg:grid-rows-1 lg:grid-cols-[2fr_1fr] lg:h-[500px]">
           <div
             id="image_wrapper"
-            className="w-full h-full aspect-video"
-            style={{ border: "1px solid red" }}
+            className="bg-[url('../about_bg.jpg')] bg-cover"
           ></div>
           <div
-            id="intro_wrapper"
-            className="bg-[#CDC4A9] p-20 flex flex-col gap-3 leading-6"
+            id="about_wrapper"
+            className="bg-[#CDC4A9] p-10 lg:p-10 flex flex-col gap-5 justify-center"
           >
-            <h2 className="text-xl">
-              Driven By Creativity.
+            <h2 className="text-xl lg:text-2xl">
+              Driven By dignity.
               <br />
-              Polished By Beauty.
+              Grounded In Beauty.
             </h2>
-            <p className="text-sm">
+            <p className="">
               We are a boutique architecture studio specializing in residential
-              and commercial spaces for modern living. Our mission is to create
+              and commercial spaces for mordern living. Our mission is to create
               meaningful environments that reflect who you are and how you live.
               Every project is an opportunity to push boundaries - with clarity,
               elegance, and intent.

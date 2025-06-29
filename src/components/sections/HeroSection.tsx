@@ -1,6 +1,30 @@
 import { Link } from "react-router";
 import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
 import HamburgerButton from "../ui/HamburgerButton";
+import ServiceCard from "../ui/ServiceCard";
+
+const servicesData = [
+  {
+    name: "Architectural Design",
+    exp: "From concept to construction, we translate ideas into architectural realities - from the first sketch to the last brick.",
+    src: "../services/service_1.jpg",
+  },
+  {
+    name: "Interior Design",
+    exp: "Tailored environments that resonate. We craft interiors that reflect identity, inspire emotion, and enhance everyday life.",
+    src: "../services/service_2.jpg",
+  },
+  {
+    name: "3D Visualization & Concepting",
+    exp: "Vision brought to life. We transform abstract ideas into vivid, immersive visuals. From moodboards to photorealistic renders.",
+    src: "../services/service_3.jpg",
+  },
+  {
+    name: "Project Supervision",
+    exp: "Precision in every detail. We oversee the execution of your project with rigorous attention.",
+    src: "../services/service_4.jpg",
+  },
+];
 
 export default function HeroSection() {
   const { setHamburgerOpen } = useHandleHamburgerStore();
@@ -46,7 +70,7 @@ export default function HeroSection() {
           ></div>
           <div
             id="about_wrapper"
-            className="bg-[#CDC4A9] p-10 lg:p-10 flex flex-col gap-5 justify-center"
+            className="bg-[#CDC4A9] p-10 lg:p-10 flex flex-col gap-5 justify-center relative"
           >
             <h2 className="text-xl lg:text-2xl">
               Driven By dignity.
@@ -60,8 +84,41 @@ export default function HeroSection() {
               Every project is an opportunity to push boundaries - with clarity,
               elegance, and intent.
             </p>
+            <Link
+              to="/"
+              className="absolute -bottom-10 right-0 underline text-[#efb100]"
+            >
+              Learn More
+            </Link>
           </div>
         </div>
+      </section>
+
+      {/* Projects section */}
+      <section
+        id="projects"
+        className="w-full flex flex-col justify-center p-4 my-20 gap-5 sm:p-6"
+      >
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+          projects
+        </h1>
+      </section>
+
+      {/* Services section */}
+      <section
+        id="services"
+        className="w-full flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
+      >
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+          services
+        </h1>
+        <ul id="services_wrapper" className="flex flex-col gap-5">
+          {servicesData.map((i, index) => (
+            <li key={index} className="border-t last:border-b">
+              <ServiceCard name={i.name} exp={i.exp} src={i.src} />
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );

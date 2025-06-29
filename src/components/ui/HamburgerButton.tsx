@@ -44,7 +44,7 @@ export default function HamburgerButton({
   return (
     <button
       id="hamburger_button"
-      className="w-8 h-5 flex flex-col items-end justify-center relative"
+      className="w-8 h-5 md:w-10 md:h-7 flex flex-col items-end justify-center relative"
       ref={hamburgerButtonRef}
       {...props}
     >

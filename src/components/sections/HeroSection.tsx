@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
 import HamburgerButton from "../ui/HamburgerButton";
 import ServiceCard from "../ui/ServiceCard";
+import ProcessCard from "../ui/ProcessCard";
 
 const servicesData = [
   {
@@ -23,6 +24,25 @@ const servicesData = [
     name: "Project Supervision",
     exp: "Precision in every detail. We oversee the execution of your project with rigorous attention.",
     src: "../services/service_4.jpg",
+  },
+];
+
+const processData = [
+  {
+    name: "Discovery",
+    exp: "We begin by learning about your lifestyle, values, and spatial needs. We analyze the site, context and goals to set a strong foundation for the project.",
+  },
+  {
+    name: "Concept Design",
+    exp: "We translate insights into a clear architectural vision. The focus is on atmosphere, spatial flow, and aesthetics that reflect your story.",
+  },
+  {
+    name: "Development",
+    exp: "We prepare detailed documentation from technical drawings to material specs. Every element is refined for accuracy, buildability, and budget alignment.",
+  },
+  {
+    name: "Execution",
+    exp: "We stay involved through site supervision and design oversight. This ensures your vision is realized with precision, quality, and peac of mind.",
   },
 ];
 
@@ -77,7 +97,7 @@ export default function HeroSection() {
               <br />
               Grounded In Beauty.
             </h2>
-            <p className="">
+            <p>
               We are a boutique architecture studio specializing in residential
               and commercial spaces for mordern living. Our mission is to create
               meaningful environments that reflect who you are and how you live.
@@ -119,6 +139,23 @@ export default function HeroSection() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Process section */}
+      <section
+        id="process"
+        className="w-full flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
+      >
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+          process
+        </h1>
+        <ol id="process_wrapper" className="flex flex-col gap-5">
+          {processData.map((i, index) => (
+            <li key={index} className="border-t last:border-b">
+              <ProcessCard name={i.name} exp={i.exp} index={index + 1} />
+            </li>
+          ))}
+        </ol>
       </section>
     </>
   );

@@ -3,63 +3,15 @@ import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
 import HamburgerButton from "../ui/HamburgerButton";
 import ServiceCard from "../ui/ServiceCard";
 import ProcessCard from "../ui/ProcessCard";
-import { useRef, useEffect } from "react";
+import {
+  TestimonialCarouselCard,
+  TestimonialCarouselWrapper,
+} from "../ui/TestimonialCarousel";
 import ReactPlayer from "react-player";
-
-const servicesData = [
-  {
-    name: "Architectural Design",
-    exp: "From concept to construction, we translate ideas into architectural realities - from the first sketch to the last brick.",
-    src: "../services/service_1.jpg",
-  },
-  {
-    name: "Interior Design",
-    exp: "Tailored environments that resonate. We craft interiors that reflect identity, inspire emotion, and enhance everyday life.",
-    src: "../services/service_2.jpg",
-  },
-  {
-    name: "3D Visualization & Concepting",
-    exp: "Vision brought to life. We transform abstract ideas into vivid, immersive visuals. From moodboards to photorealistic renders.",
-    src: "../services/service_3.jpg",
-  },
-  {
-    name: "Project Supervision",
-    exp: "Precision in every detail. We oversee the execution of your project with rigorous attention.",
-    src: "../services/service_4.jpg",
-  },
-];
-
-const processData = [
-  {
-    name: "Discovery",
-    exp: "We begin by learning about your lifestyle, values, and spatial needs. We analyze the site, context and goals to set a strong foundation for the project.",
-  },
-  {
-    name: "Concept Design",
-    exp: "We translate insights into a clear architectural vision. The focus is on atmosphere, spatial flow, and aesthetics that reflect your story.",
-  },
-  {
-    name: "Development",
-    exp: "We prepare detailed documentation from technical drawings to material specs. Every element is refined for accuracy, buildability, and budget alignment.",
-  },
-  {
-    name: "Execution",
-    exp: "We stay involved through site supervision and design oversight. This ensures your vision is realized with precision, quality, and peac of mind.",
-  },
-];
+import { servicesData, processData, testimonialData } from "../data";
 
 export default function HeroSection() {
   const { setHamburgerOpen } = useHandleHamburgerStore();
-
-  // const iframeRef = useRef(null);
-  // useEffect(() => {
-  //   if (document !== undefined || null) {
-  //     const iframe = document.getElementById(
-  //       "interim_iframe"
-  //     ) as HTMLIFrameElement;
-  //     iframe.muted = true;
-  //   }
-  // }, []);
 
   return (
     <>
@@ -201,6 +153,27 @@ export default function HeroSection() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Testimonial section */}
+      <section
+        id="testimonial"
+        className="w-full min-h-svh flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
+      >
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+          testimonials
+        </h1>
+        <TestimonialCarouselWrapper>
+          {testimonialData.map((i, index) => (
+            <TestimonialCarouselCard
+              key={index}
+              author={i.author}
+              exp={i.exp}
+              src={`../testimonials/testimonial_bg_${index + 1}.jpg`}
+              className="w-full flex flex-shrink-0 basis-[20rem] xl:basis-auto xl:flex-shrink flex-col xl:hover:scale-150 cursor-grab xl:cursor-pointer xl:last:origin-right xl:first:origin-left xl:duration-200 xl:hover:duration-200 xl:hover:z-[5] xl:group"
+            />
+          ))}
+        </TestimonialCarouselWrapper>
       </section>
     </>
   );

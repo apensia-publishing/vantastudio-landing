@@ -3,6 +3,8 @@ import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
 import HamburgerButton from "../ui/HamburgerButton";
 import ServiceCard from "../ui/ServiceCard";
 import ProcessCard from "../ui/ProcessCard";
+import { useRef, useEffect } from "react";
+import ReactPlayer from "react-player";
 
 const servicesData = [
   {
@@ -48,6 +50,16 @@ const processData = [
 
 export default function HeroSection() {
   const { setHamburgerOpen } = useHandleHamburgerStore();
+
+  // const iframeRef = useRef(null);
+  // useEffect(() => {
+  //   if (document !== undefined || null) {
+  //     const iframe = document.getElementById(
+  //       "interim_iframe"
+  //     ) as HTMLIFrameElement;
+  //     iframe.muted = true;
+  //   }
+  // }, []);
 
   return (
     <>
@@ -139,6 +151,39 @@ export default function HeroSection() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Interim section */}
+      <section
+        id="interim"
+        className="w-full lg:h-[55svh] flex flex-col lg:flex-row gap-5 p-4 sm:p-6"
+      >
+        <div className="w-full h-full relative aspect-video lg:aspect-auto">
+          <ReactPlayer
+            src="https://player.vimeo.com/video/143145583?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=0"
+            muted
+            loop
+            autoPlay
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              aspectRatio: "16 / 9",
+            }}
+          />
+        </div>
+        <div className="w-full h-full flex flex-col justify-between">
+          <h1 className="uppercase text-[8vw] lg:text-[4vw] text-midnight">
+            vanda studio
+          </h1>
+          <div className="w-full h-[40svh] lg:h-full relative">
+            <img
+              src="../interim_bg.jpg"
+              alt="Interim section background image"
+              className="w-full h-full absolute inset-0 object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Process section */}

@@ -170,10 +170,30 @@ export default function HeroSection() {
               author={i.author}
               exp={i.exp}
               src={`../testimonials/testimonial_bg_${index + 1}.jpg`}
-              className="w-full flex flex-shrink-0 basis-[20rem] xl:basis-auto xl:flex-shrink flex-col xl:hover:scale-150 cursor-grab xl:cursor-pointer xl:last:origin-right xl:first:origin-left xl:duration-200 xl:hover:duration-200 xl:hover:z-[5] xl:group"
+              className="w-full flex flex-shrink-0 basis-[20rem] xl:basis-auto xl:flex-shrink flex-col cursor-grab xl:cursor-pointer xl:duration-200 xl:hoveR:duration-200 group"
             />
           ))}
         </TestimonialCarouselWrapper>
+      </section>
+
+      {/* Fin section */}
+      <section
+        id="fin"
+        className="w-full min-h-svh flex flex-col justify-center p-4 gap-15 sm:p-6 bg-[url('https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg')] bg-cover relative"
+      >
+        <div className="text-white lg:absolute lg:right-[10rem] top-10">
+          <h1 className="text-3xl mb-5">Your Space, Our Passion</h1>
+          <p className="max-w-[25rem]">
+            Let's design something remarkable together. Tell us about your
+            project.
+          </p>
+        </div>
+        <Link
+          to="/"
+          className="underline text-white text-lg absolute right-6 bottom-6 lg:right-[28rem]"
+        >
+          Show More
+        </Link>
       </section>
     </>
   );

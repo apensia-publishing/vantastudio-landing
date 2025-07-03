@@ -1,5 +1,3 @@
-type ProjectDetailProps = {};
-
 export default function ProjectDetail() {
   return (
     <main>

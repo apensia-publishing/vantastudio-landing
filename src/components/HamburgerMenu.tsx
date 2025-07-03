@@ -64,7 +64,14 @@ function HamburgerMenuCloseButton({
 
 export default function HamburgerMenu() {
   // Menu link list
-  const menuLinkData = ["about", "projects", "services", "process", "contact"];
+  const menuLinkData = [
+    "home",
+    "about",
+    "projects",
+    "services",
+    "process",
+    "contact",
+  ];
 
   // GSAP
   const hamburgerMenuRef = useRef<HTMLDivElement | null>(null);
@@ -134,8 +141,9 @@ export default function HamburgerMenu() {
         {menuLinkData.map((i, index) => (
           <li key={index} aria-labelledby="menu_link">
             <Link
-              to={i === "about" ? "/" : `/${i}`}
+              to={i === "home" ? "/" : `/${i}`}
               className="text-2xl md:text-4xl overflow-hidden"
+              onClick={handleHamburgerMenuClose}
             >
               {i.charAt(0).toUpperCase() + i.slice(1)}
             </Link>

@@ -1,20 +1,87 @@
 import { Link } from "react-router";
 import useHandleHamburgerStore from "@/store/useHandleHamburgerStore";
-import HamburgerButton from "../ui/HamburgerButton";
-import ServiceCard from "../ui/ServiceCard";
-import ProcessCard from "../ui/ProcessCard";
+import HamburgerButton from "../components/HamburgerButton";
+import HamburgerMenu from "../components/HamburgerMenu";
+import ServiceCard from "../components/ServiceCard";
+import ProcessCard from "../components/ProcessCard";
 import {
   TestimonialCarouselCard,
   TestimonialCarouselWrapper,
-} from "../ui/TestimonialCarousel";
+} from "../components/TestimonialCarousel";
 import ReactPlayer from "react-player";
-import { servicesData, processData, testimonialData } from "../data";
+import FooterSection from "@/components/section/Footer";
 
-export default function HeroSection() {
+const servicesData = [
+  {
+    name: "Architectural Design",
+    exp: "From concept to construction, we translate ideas into architectural realities - from the first sketch to the last brick.",
+    src: "../services/service_1.jpg",
+  },
+  {
+    name: "Interior Design",
+    exp: "Tailored environments that resonate. We craft interiors that reflect identity, inspire emotion, and enhance everyday life.",
+    src: "../services/service_2.jpg",
+  },
+  {
+    name: "3D Visualization & Concepting",
+    exp: "Vision brought to life. We transform abstract ideas into vivid, immersive visuals. From moodboards to photorealistic renders.",
+    src: "../services/service_3.jpg",
+  },
+  {
+    name: "Project Supervision",
+    exp: "Precision in every detail. We oversee the execution of your project with rigorous attention.",
+    src: "../services/service_4.jpg",
+  },
+];
+
+const processData = [
+  {
+    name: "Discovery",
+    exp: "We begin by learning about your lifestyle, values, and spatial needs. We analyze the site, context and goals to set a strong foundation for the project.",
+  },
+  {
+    name: "Concept Design",
+    exp: "We translate insights into a clear architectural vision. The focus is on atmosphere, spatial flow, and aesthetics that reflect your story.",
+  },
+  {
+    name: "Development",
+    exp: "We prepare detailed documentation from technical drawings to material specs. Every element is refined for accuracy, buildability, and budget alignment.",
+  },
+  {
+    name: "Execution",
+    exp: "We stay involved through site supervision and design oversight. This ensures your vision is realized with precision, quality, and peac of mind.",
+  },
+];
+
+const testimonialData = [
+  {
+    author: "John Doe",
+    exp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a?",
+  },
+  {
+    author: "Jane Doe",
+    exp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a?",
+  },
+  {
+    author: "Jason Wang",
+    exp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a?",
+  },
+  {
+    author: "Ashely Berlin",
+    exp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a?",
+  },
+  {
+    author: "Tobias McKline",
+    exp: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a?",
+  },
+];
+
+export default function HomePage() {
   const { setHamburgerOpen } = useHandleHamburgerStore();
 
   return (
-    <>
+    <main>
+      <HamburgerMenu />
       <section
         id="hero"
         className="w-full h-svh bg-[url('../hero_bg.jpg')] bg-cover bg-no-repeat p-4 text-white flex flex-col justify-between sm:p-6"
@@ -197,15 +264,7 @@ export default function HeroSection() {
       </section>
 
       {/* Footer section */}
-      <footer id="footer" className="w-full bg-black p-4 sm:p-6">
-        <h1 className="text-white uppercase text-[13.5vw] lg:text-[13.8vw] text-nowrap pt-5">
-          vanda studio
-        </h1>
-        <div className="text-white flex justify-between mt-5 lg:mt-0">
-          <span className="text-md lg:text-lg">2025 vanda studio</span>
-          <span className="text-md lg:text-lg">All rights reserved.</span>
-        </div>
-      </footer>
-    </>
+      <FooterSection />
+    </main>
   );
 }

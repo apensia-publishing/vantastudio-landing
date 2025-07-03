@@ -110,7 +110,7 @@ export default function HomePage() {
         className="w-full flex flex-col items-center justify-center p-4 my-20 gap-5 sm:p-6"
       >
         <div className="w-full">
-          <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+          <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#cdc4a9)] bg-clip-text lg:text-left lg:text-6xl">
             about studio
           </h1>
         </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
             </p>
             <Link
               to="/"
-              className="absolute -bottom-10 right-0 underline text-[#efb100]"
+              className="absolute -bottom-10 right-0 underline text-midnight font-semibold"
             >
               Learn More
             </Link>
@@ -150,7 +150,7 @@ export default function HomePage() {
         id="projects"
         className="w-full flex flex-col justify-center p-4 my-20 gap-5 sm:p-6"
       >
-        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#cdc4a9)] bg-clip-text lg:text-left lg:text-6xl">
           projects
         </h1>
       </section>
@@ -160,7 +160,7 @@ export default function HomePage() {
         id="services"
         className="w-full flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
       >
-        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#cdc4a9)] bg-clip-text lg:text-left lg:text-6xl">
           services
         </h1>
         <ul id="services_wrapper" className="flex flex-col gap-5">
@@ -210,7 +210,7 @@ export default function HomePage() {
         id="process"
         className="w-full flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
       >
-        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#cdc4a9)] bg-clip-text lg:text-left lg:text-6xl">
           process
         </h1>
         <ol id="process_wrapper" className="flex flex-col gap-5">
@@ -227,7 +227,7 @@ export default function HomePage() {
         id="testimonial"
         className="w-full min-h-svh flex flex-col justify-center p-4 my-20 gap-15 sm:p-6"
       >
-        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#efb100)] bg-clip-text lg:text-left lg:text-6xl">
+        <h1 className="uppercase text-center text-[12vw] text-nowrap text-transparent bg-[linear-gradient(#fff,#cdc4a9)] bg-clip-text lg:text-left lg:text-6xl">
           testimonials
         </h1>
         <TestimonialCarouselWrapper>

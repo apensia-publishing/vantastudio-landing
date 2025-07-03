@@ -64,14 +64,7 @@ function HamburgerMenuCloseButton({
 
 export default function HamburgerMenu() {
   // Menu link list
-  const menuLinkData = [
-    "home",
-    "about",
-    "projects",
-    "services",
-    "process",
-    "contact",
-  ];
+  const menuLinkData = ["home", "about", "projects"];
 
   // GSAP
   const hamburgerMenuRef = useRef<HTMLDivElement | null>(null);
